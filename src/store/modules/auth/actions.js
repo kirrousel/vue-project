@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from "../../../axios-auth";
 let timer;
 
 export default {
   async auth(context,payload) {
     let response;
-    let loginUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB_cc39MmtYLNDUfRW5cN3c7TD9SfOFiws';
-    let signupUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB_cc39MmtYLNDUfRW5cN3c7TD9SfOFiws';
+    let loginUrl = '/accounts:signInWithPassword?key=AIzaSyB_cc39MmtYLNDUfRW5cN3c7TD9SfOFiws';
+    let signupUrl = '/accounts:signUp?key=AIzaSyB_cc39MmtYLNDUfRW5cN3c7TD9SfOFiws';
     const requestUrl = payload.isLogin ? loginUrl : signupUrl
     try {
       response = await axios.post(requestUrl, {

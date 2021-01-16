@@ -11,7 +11,7 @@ export default {
 
     try {
       response = await axios.post(
-        `https://vue-course-c2822-default-rtdb.europe-west1.firebasedatabase.app/requests/${payload.coachId}.json`,
+        `/requests/${payload.coachId}.json`,
         newRequest
       );
     } catch (error) {
@@ -30,7 +30,7 @@ export default {
     const token = context.rootGetters.token;
     try {
      const response = await axios.get(
-      `https://vue-course-c2822-default-rtdb.europe-west1.firebasedatabase.app/requests/${coachId}.json?auth=${token}`
+      `/requests/${coachId}.json?auth=${token}`
       );
      for (const key in response.data) {
        const request = {

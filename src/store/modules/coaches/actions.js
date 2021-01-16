@@ -15,7 +15,7 @@ export default {
 
     try {
       await axios.put(
-        `https://vue-course-c2822-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=${token}`,
+        `/coaches/${userId}.json?auth=${token}`,
          coachData
         );
     } catch (error) {
@@ -34,7 +34,7 @@ export default {
     }
     let coaches = [];
     try {
-      const response = await axios.get('https://vue-course-c2822-default-rtdb.europe-west1.firebasedatabase.app/coaches.json');
+      const response = await axios.get('/coaches.json');
       for (const key in response.data) {
         const coach = {
           id: key,
